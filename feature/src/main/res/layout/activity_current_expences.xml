@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yblee.splitbill.feature.CurrentExpences">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Person"
+        tools:layout_editor_absoluteX="237dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="109dp"
+        android:layout_height="48dp"
+        android:text="Add Person"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Summary"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="433dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="79dp"
+        android:layout_height="37dp"
+        android:text="Add"
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="388dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Current Expenses"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="215dp"
+        android:layout_height="63dp"
+        android:text="Additional Information"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="329dp" />
+
+    <ListView
+        android:layout_width="368dp"
+        android:layout_height="267dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="54dp" />
+</android.support.constraint.ConstraintLayout>
