@@ -1,0 +1,4 @@
+#Wed Jan 17 19:37:08 PST 2018
+base.0=/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/base/build/intermediates/transforms/dexMerger/feature/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

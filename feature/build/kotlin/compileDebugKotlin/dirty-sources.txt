@@ -1,0 +1,5 @@
+/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/java/com/yblee/splitbill/feature/Expences.kt
+/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/java/com/yblee/splitbill/feature/MainActivity.kt
+/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/java/com/yblee/splitbill/feature/CurrentExpences.kt
+/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/java/com/yblee/splitbill/feature/Create.kt
+/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/java/com/yblee/splitbill/feature/Add_Contacts.kt

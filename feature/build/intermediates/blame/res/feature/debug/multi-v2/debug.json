@@ -1,0 +1,67 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/build/intermediates/res/merged/feature/debug/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/res/values/dimens.xml",
+                    "from": {
+                        "startLines": "2,3,6,5,4",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "88,146,310,260,202",
+                        "endColumns": "57,55,41,49,57",
+                        "endOffsets": "141,197,347,305,255"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,113,169,211,261",
+                        "endColumns": "57,55,41,49,57",
+                        "endOffsets": "108,164,206,256,314"
+                    }
+                },
+                {
+                    "source": "/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "6,4,3",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "169,92,18",
+                        "endColumns": "52,75,73",
+                        "endOffsets": "217,163,87"
+                    },
+                    "to": {
+                        "startLines": "7,8,9",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "319,372,448",
+                        "endColumns": "52,75,73",
+                        "endOffsets": "367,443,517"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/build/intermediates/res/merged/feature/debug/values-v21_values-v21.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/ayqolpankadirden/groupProj/splitBill/SplitBill/feature/src/main/res/values-v21/styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "240"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "278"
+                    }
+                }
+            ]
+        }
+    ]
+}
