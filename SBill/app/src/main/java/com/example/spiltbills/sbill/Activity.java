@@ -7,12 +7,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Activity {
 	private String activityName;
 	private ArrayList<Expense> expenses;
-	private ArrayList<ActivityAccount> peopleList;
+	private HashMap<ActivityAccount,Double> peopleList;
 	private RegisteredAccount owner; // whats this for? we haven't us it
 	private int id;
 
@@ -21,46 +22,51 @@ public class Activity {
 	public Activity(String name, int numOfPeople, RegisteredAccount owner, List<String> contacts) {
 		this.activityName = name;
 		this.owner = owner;
-		peopleList = new ArrayList<ActivityAccount>();
+		peopleList = new HashMap<>();
         expenses = new ArrayList<Expense>();
-        makePplList(numOfPeople,contacts);
+//        makePplList(numOfPeople,contacts);
         id = ++ID_SERIES;
+        storeActivityData();
 	}
 
-	//Storing data into a local file
-	protected void storeData() throws Exception {
-		Context ctx;
-		String data =activityName + "," + id + "\n";
+	/** Stores the name of the Activity in a table
+	 * activityName,activityId,listOPPl=totalAmountSpentThroughoutActivity
+	 * Ex.
+	 * Camping,123958,Abby=234, Joyce=45.34
+	 * Skiing,348795,Steven=283,Brain=28.09
+	 */
+	private void storeActivityData() {
+
+		String data =activityName + "," + id + peopleList.toString() + "\n";
+
 		File file = new File("."+String.valueOf(owner.getID()));
-		FileOutputStream fos;
-		try {
-			//TODO: store the data in
-			fos = new FileOutputStream( file,true );
+
+		try (FileOutputStream outputStream = new FileOutputStream( file,true )) {
+
+			outputStream.write(data.getBytes());
 		} catch (FileNotFoundException e){
 			try {
 				file.createNewFile();
+				storeActivityData();
 			} catch (Exception exception){
 					System.out.println("New File Can't Be Created! ");
 			}
-		} finally {
-			fos = new FileOutputStream( file,true );
-			fos.write(data.getBytes());
-			fos.close();
+		} catch (IOException ioexception){
+			System.out.println(ioexception.toString());
 		}
 	}
 
-
-	private void makePplList(int numOfPeople,List<String> contacts) {
-		peopleList.add(new ActivityAccount(owner));
-		int i = 1;
-		for (String name : contacts) {
-			peopleList.add(new ActivityAccount(name));
-			i++;
-		}
-		for (; i <= numOfPeople; i++) {
-			peopleList.add(new ActivityAccount());
-		}
-	}
+//	private void makePplList(int numOfPeople,List<String> contacts) {
+//		peopleList.put(new ActivityAccount(owner),0);
+//		int i = 1;
+//		for (String name : contacts) {
+//			peopleList.put(new ActivityAccount(name),0);
+//			i++;
+//		}
+//		for (; i <= numOfPeople; i++) {
+//			peopleList.put(new ActivityAccount(),0);
+//		}
+//	}
 
 	public Expense getexpense(int index) {
 		return expenses.get(index);
@@ -76,7 +82,7 @@ public class Activity {
     public int getNumOfPpl(){
 	    return peopleList.size();
     }
-	
+
 	public void setName(String name) { // set the name of activity?
 		this.activityName = name;
 	}
@@ -84,22 +90,22 @@ public class Activity {
 	public double getCurrentTotal(){
 	    double total = 0;
 	    for( Expense es : expenses){
-	        total += es.getAmount();
+	        total += es.getBalance();
         }
         return total;
     }
 
-	public boolean deletePeople(String name) {
-		for (Account ac : peopleList) {
-			if(ac.getName() == name){
-				peopleList.remove(ac);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public void addPeople(ActivityAccount account) {
-		peopleList.add(account);
-	}
+//	public boolean deletePeople(String name) {
+//		for (Account ac : peopleList) {
+//			if(ac.getName() == name){
+//				peopleList.remove(ac);
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+//
+//	public void addPeople(ActivityAccount account) {
+//		peopleList.put(account,0);
+//	}
 }

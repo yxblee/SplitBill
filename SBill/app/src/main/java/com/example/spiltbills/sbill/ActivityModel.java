@@ -30,18 +30,19 @@ public class ActivityModel {
     }
 
     //Creates an Activity
-    public boolean createActivity(String name, int numOfPpl ) {
+    public boolean createActivity(String name, int numOfPpl) {
         if(isNameValid(name)) {
             Activity activity = new Activity(name, numOfPpl, owner,contacts);
             activities.add(activity);
             return activities.contains(activity);
         }
+
         System.out.println("activity not created");
         return false;
     }
 
     private boolean isNameValid(String name){
-        Scanner scanner = new Scanner("fileName");//need a way to access file
+        Scanner scanner = new Scanner("." + owner.getID());//need a way to access file
         while(scanner.hasNextLine()){
             String line = scanner.nextLine();
             for(String str : line.split(","))
@@ -72,14 +73,6 @@ public class ActivityModel {
     public boolean removeAccount(String name) {
         return owner.deletContact(name);
     }
-
-
-//    public boolean btnPressed(Button btn) {
-//        return false;
-//    }
-
-
-
 
 
 

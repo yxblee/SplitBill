@@ -32,9 +32,10 @@ public class ExpenseModel {
         return getCurrentTotal()/getNumOfPpl();
     }
 
-    public boolean deletePpl(String name){
-        return activity.deletePeople(name);
-    }
+
+//    public boolean deletePpl(String name){
+//        return activity.deletePeople(name);
+//    }
 
 
 
