@@ -1,5 +1,6 @@
 package com.example.spiltbills.sbill;
 
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 
 import java.util.ArrayList;
@@ -13,13 +14,13 @@ public class Account {
 	
 	public static final String DEFAULT_NAME = "User";
 	public static final String DEFAULT_EMAIL = "none";
-	public static final Icon DEFAULT_PIC;//don't know how to initialize
+//	public static final Icon DEFAULT_PIC = new Icon();//don't know how to initialize
 	public static final int DEFAULT_ID = 1000;//not sure how are we going to generate, right now just doing increasing by one after each call
 	
 	public Account() {
 		this.name = DEFAULT_NAME;
 		this.email = DEFAULT_EMAIL;
-		this.picture = DEFAULT_PIC;
+//		this.picture = DEFAULT_PIC;
 		this.id = DEFAULT_ID;
 		listOfContact = new ArrayList<Account>();
 		id++;
