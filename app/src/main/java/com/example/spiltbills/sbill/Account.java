@@ -1,67 +1,55 @@
 package com.example.spiltbills.sbill;
+import android.content.Context;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Icon;
-
-import java.util.ArrayList;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 
 public class Account {
-	private String name;
-	private String email;
-	private Icon picture;
-	private ArrayList<Account>listOfContact;
-	private int id;
-	
-	public static final String DEFAULT_NAME = "User";
-	public static final String DEFAULT_EMAIL = "none";
-//	public static final Icon DEFAULT_PIC = new Icon();//don't know how to initialize
-	public static final int DEFAULT_ID = 1000;//not sure how are we going to generate, right now just doing increasing by one after each call
-	
-	public Account() {
+	protected String name;
+	protected int id;
+
+	protected static final String DEFAULT_NAME = "User";
+	protected static final int  DEFAULT_ID = 0;
+
+	protected  static final String DATA_FILE = "Accounts.csv";
+//	public static final Icon DEFAULT_PIC;//don't know how to initialize
+
+	protected Account() {
 		this.name = DEFAULT_NAME;
-		this.email = DEFAULT_EMAIL;
-//		this.picture = DEFAULT_PIC;
 		this.id = DEFAULT_ID;
-		listOfContact = new ArrayList<Account>();
-		id++;
 	}
 
-	public Account(String aName) {
+	protected Account(String aName) {
 		this.name = aName;
-		listOfContact = new ArrayList<Account>();
-		id++;
+		id = DEFAULT_ID;
 	}
 
-	//we don't need "String password"
-	public Account(String aName, String anEmail) {
-		this.name = aName;
-		this.email = anEmail;
-		listOfContact = new ArrayList<Account>();
-		id++;
+	protected Account(String name, int id){
+		this.name = name;
+		this.id = id;
 	}
+
+
+
 
 	//we don't need changPW
 	public void changeName(String newName) {
 		this.name = newName;
 	}
 
-	public void changePicture(Icon newPicture) {
-		this.picture = newPicture;
-	}
+//	public void changePicture(Icon newPicture) {
+//		this.picture = newPicture;
+//	}
 
 	public String getName() {
 		return this.name;
 	}
 
-	public Icon getPic() {
-		return picture;
-	}
+//	public Icon getPic() {
+//		return picture;
+//	}
 
-	public boolean deletPeople(int index) {
-		return listOfContact.remove(listOfContact.get(index));
-	}
-
-	public void addPeople(Account account) {
-		listOfContact.add(account);
+	protected int getID(){
+		return id;
 	}
 }

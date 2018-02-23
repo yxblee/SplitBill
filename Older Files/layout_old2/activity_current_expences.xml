@@ -67,9 +67,7 @@
             android:id="@+id/balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="35dp"
+            android:layout_below="@+id/numOfPpl"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Balance:" />
@@ -78,8 +76,7 @@
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/balance"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Total:" />
