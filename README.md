@@ -1,2 +1,2 @@
 # SplitBill
-bill splitter
+Android application for splitting bills.
