@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight"
-    tools:context="app.splitbill.yblee.com.splitbills.create_activity">
+    tools:context="com.example.spiltbills.ActivityCreateActivity">
 
     <TextView
         android:id="@+id/title"
