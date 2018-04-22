@@ -1,5 +1,8 @@
 package com.example.spiltbills;
 
+import android.content.Context;
+import android.graphics.drawable.Icon;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,10 +13,11 @@ import java.util.ArrayList;
  * Created by Ayhan on 2018-02-13.
  */
 
-public class RegisteredAccount extends Account{
+public class RegisteredAccount extends Account implements java.io.Serializable{
     private String email;
 //    private Icon picture;
     private int id;
+
     private ArrayList<ActivityAccount> listOfContact;
     protected static int ID_series = 0;
 
@@ -21,7 +25,14 @@ public class RegisteredAccount extends Account{
         super(name,++ID_series);
         this.email = email;
     }
-    public boolean deletContact(String name) {
+
+    public RegisteredAccount( int id, String name, String email){
+        this.id = id;
+        this.email = email;
+        this.changeName(name);
+    }
+
+    public boolean deleteContact(String name) {
         boolean isRemoved = false;
         for(Account ac : listOfContact){
             if( ac.getName() == name){
@@ -31,6 +42,8 @@ public class RegisteredAccount extends Account{
         }
         return isRemoved;
     }
+
+    public String getEmail() { return this.email; }
 
     private void createFolder(){
         File folder = new File("."+String.valueOf(this.getID()));
@@ -72,4 +85,6 @@ public class RegisteredAccount extends Account{
             System.out.println(ioexception.toString());
         }
     }
+
+
 }

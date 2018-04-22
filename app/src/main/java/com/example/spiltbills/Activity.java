@@ -1,16 +1,15 @@
 package com.example.spiltbills;
 
 import android.content.Context;
+import java.io.FileOutputStream;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-public class Activity {
+public class Activity implements java.io.Serializable{
 	private String activityName;
 	private ArrayList<Expense> expenses;
 	private HashMap<ActivityAccount,Double> peopleList;
@@ -19,7 +18,7 @@ public class Activity {
 
 	private static int ID_SERIES = 0;
 
-	public Activity(String name, int numOfPeople, RegisteredAccount owner, List<String> contacts) {
+	public Activity(String name, int numOfPeople, RegisteredAccount owner) {
 		this.activityName = name;
 		this.owner = owner;
 		peopleList = new HashMap<>();
@@ -27,6 +26,10 @@ public class Activity {
 //        makePplList(numOfPeople,contacts);
         id = ++ID_SERIES;
         storeActivityData();
+	}
+
+	public int getID(){
+		return id;
 	}
 
 	/** Stores the name of the Activity in a table
@@ -37,23 +40,25 @@ public class Activity {
 	 */
 	private void storeActivityData() {
 
-		String data =activityName + "," + id + peopleList.toString() + "\n";
 
-		File file = new File("."+String.valueOf(owner.getID()));
 
-		try (FileOutputStream outputStream = new FileOutputStream( file,true )) {
-
-			outputStream.write(data.getBytes());
-		} catch (FileNotFoundException e){
-			try {
-				file.createNewFile();
-				storeActivityData();
-			} catch (Exception exception){
-					System.out.println("New File Can't Be Created! ");
-			}
-		} catch (IOException ioexception){
-			System.out.println(ioexception.toString());
-		}
+//		String data =activityName + "," + id + peopleList.toString() + "\n";
+//
+//		File file = new File("."+String.valueOf(owner.getID()));
+//
+//		try (FileOutputStream outputStream = new FileOutputStream( file,true )) {
+//
+//			outputStream.write(data.getBytes());
+//		} catch (FileNotFoundException e){
+//			try {
+//				file.createNewFile();
+//				storeActivityData();
+//			} catch (Exception exception){
+//					System.out.println("New File Can't Be Created! ");
+//			}
+//		} catch (IOException ioexception){
+//			System.out.println(ioexception.toString());
+//		}
 	}
 
 //	private void makePplList(int numOfPeople,List<String> contacts) {

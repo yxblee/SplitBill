@@ -1,20 +1,31 @@
 package com.example.spiltbills;
 
+import android.content.Context;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Expense {
 	private String expenseName;
 	private HashMap<ActivityAccount, Double> listOfPayee;
+	private String payee;
+	private double amount;
 
 	public Expense(String name, HashMap<ActivityAccount, Double> listOfPayee) {
 		this.expenseName = name;
 		this.listOfPayee = listOfPayee;
 		updateAmount();
 
+	}
+
+	public Expense(String name, String payee, double amount){
+		this.expenseName = name;
+		this.payee = payee;
+		this.amount = amount;
 	}
 	public String getName() {
 		return this.expenseName;

@@ -1,8 +1,20 @@
 package com.example.spiltbills;
 
+import android.content.Context;
+import android.widget.Button;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 /**
  * Created by Ayhan on 2018-02-02.
@@ -20,15 +32,15 @@ public class ActivityModel {
     }
 
     //Creates an Activity
-    public boolean createActivity(String name, int numOfPpl) {
+    public Activity createActivity(String name, int numOfPpl) {
         if(isNameValid(name)) {
-            Activity activity = new Activity(name, numOfPpl, owner,contacts);
+            Activity activity = new Activity(name, numOfPpl, owner);
             activities.add(activity);
-            return activities.contains(activity);
+            return activity;
         }
 
         System.out.println("activity not created");
-        return false;
+        return null;
     }
 
     private boolean isNameValid(String name){
@@ -41,6 +53,7 @@ public class ActivityModel {
         }
         return true;
     }
+
 
 
     //Search for an Activity
@@ -60,9 +73,9 @@ public class ActivityModel {
         return owner.addContact(new ActivityAccount(name) );
     }
 
-    public boolean removeAccount(String name) {
-        return owner.deletContact(name);
-    }
+//    public boolean removeAccount(String name) {
+//        return owner.deletContact(name);
+//    }
 
 
 
