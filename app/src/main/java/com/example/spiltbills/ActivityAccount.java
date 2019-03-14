@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 /**
  * Created by Ayhan on 2018-02-13.

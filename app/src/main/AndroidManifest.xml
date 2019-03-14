@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.spiltbills">
+    package="com.example.splitbills">
 
     <application
         android:allowBackup="true"
@@ -18,11 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityCreateActivity">
-        </activity>
+        <activity android:name=".ActivityCreateActivity"></activity>
         <activity android:name=".ContactActivity" />
-        <activity android:name=".CurrentExpencesActivity"></activity>
-        <activity android:name=".ExpenseActivity"></activity>
+        <activity android:name=".CurrentExpencesActivity" />
+        <activity android:name=".ExpenseActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>

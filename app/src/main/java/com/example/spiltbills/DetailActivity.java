@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.splitbills.R;
+
 import org.w3c.dom.Text;
 
-import static com.example.splitbills.CurrentExpencesActivity.EXTRA_EXDETAILS;
-import static com.example.splitbills.MainActivity.EXTRA_DETAILS;
+import static com.example.spiltbills.CurrentExpencesActivity.EXTRA_EXDETAILS;
+import static com.example.spiltbills.MainActivity.EXTRA_DETAILS;
 
 public class DetailActivity extends AppCompatActivity {
 

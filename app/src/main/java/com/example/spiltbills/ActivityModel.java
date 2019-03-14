@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 import android.content.Context;
 import android.widget.Button;
@@ -33,14 +33,14 @@ public class ActivityModel {
 
     //Creates an Activity
     public Activity createActivity(String name, int numOfPpl) {
-       // if(isNameValid(name)) {
+        if(isNameValid(name)) {
             Activity activity = new Activity(name, numOfPpl, owner);
             activities.add(activity);
-            //return activity;
-        //}
+            return activity;
+        }
 
-       // System.out.println("activity not created");
-        return activity;
+        System.out.println("activity not created");
+        return null;
     }
 
     private boolean isNameValid(String name){

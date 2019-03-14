@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.splitbills.R;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -53,7 +55,7 @@ public class ContactActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 //write the activity to the file
-                com.example.splitbills.Activity activity = new Activity(getIntent().getStringExtra("activityName"),getIntent().getIntExtra("numOfPpl",0),user);
+                com.example.spiltbills.Activity activity = new Activity(getIntent().getStringExtra("activityName"),getIntent().getIntExtra("numOfPpl",0),user);
                 String fileName = "activities";
                 try {
                     File file = new File(fileName);

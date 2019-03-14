@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.splitbills.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

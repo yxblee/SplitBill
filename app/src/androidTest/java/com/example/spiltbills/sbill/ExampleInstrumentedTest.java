@@ -1,4 +1,4 @@
-package com.example.splitbills.sbill;
+package com.example.spiltbills.sbill;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

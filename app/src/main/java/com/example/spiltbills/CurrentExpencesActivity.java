@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.splitbills.R;
 
 import java.util.ArrayList;
 import java.util.List;

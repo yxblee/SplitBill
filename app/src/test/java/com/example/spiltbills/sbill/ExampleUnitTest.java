@@ -1,4 +1,4 @@
-package com.example.splitbills.sbill;
+package com.example.spiltbills.sbill;
 
 import org.junit.Test;
 

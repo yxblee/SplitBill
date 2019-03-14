@@ -1,4 +1,4 @@
-package com.example.splitbills;
+package com.example.spiltbills;
 import android.content.Context;
 
 import java.io.FileNotFoundException;
