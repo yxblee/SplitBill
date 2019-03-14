@@ -4,10 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +31,7 @@ public class ExpenseActivity extends AppCompatActivity {
 
         //Buttons
         Button doneBtn = findViewById(R.id.done);
-        Button morePayer = findViewById(R.id.morePayer);
+        ImageButton morePayer = findViewById(R.id.morePayer);
         Button subExpense = findViewById(R.id.subE);
         Button participant = findViewById(R.id.participant);
         Button done = findViewById(R.id.done);
@@ -37,13 +40,51 @@ public class ExpenseActivity extends AppCompatActivity {
         EditText expenseName = findViewById(R.id.expenseName);
         EditText nameText = findViewById(R.id.nameText);
         EditText amount = findViewById(R.id.amountText);
+        double total = 0.00;
 
         //outputs
         TextView totalCost = findViewById(R.id.expenseCost);
 
         String activityID = getIntent().getIntExtra("activityID",0) + "";
 
-        //TODO
+        //TODO: add a change listener that updates Expense Cost after enter the Amount
+        amount.addTextChangedListener(new TextWatcher() {
+            Double adding = 0.0;
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if (s.length() != 0) {
+                    try {
+
+                        adding = Double.parseDouble(amount.getText().toString());
+
+                        totalCost.setText("$"+adding.toString()); //TODO: doesn't update the total cost view
+                    } catch (Exception e) {
+                        Toast.makeText(getApplicationContext(), amount.getText().toString(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    totalCost.setText("$0.0");
+                }
+            }
+        });
+
+        //TODO: when "+" is clicked, add a new field to enter Name and Amount
+
+        //TODO:when SUBEXPENSE is clicked, allow for subexpense information to be added, so that it
+            //is removed from the total when the bills is split
+
+        //TODO: Participant- allow to remove some participants from the expense
+
+        //TODO: DONE BUTTON
         doneBtn.setOnClickListener((View view) -> {
             if(TextUtils.isEmpty(expenseName.getText().toString())){
                 Toast.makeText(getApplicationContext(), "Expense name cannot be empty!", Toast.LENGTH_LONG).show();
